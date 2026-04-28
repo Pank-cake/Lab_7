@@ -13,7 +13,7 @@
 3) Выводим их сумму.
 
 ### Тестирование
-
+<img width="451" height="178" alt="Test1" src="https://github.com/user-attachments/assets/ef2a6310-db07-4a12-82ce-289221a229dc" />
 
 
 ## Задача 2
@@ -27,7 +27,7 @@
 3) Суммируем все чётные числа и выводим результат.
 
 ### Тестирование
-
+<img width="385" height="206" alt="Test2" src="https://github.com/user-attachments/assets/bed5aee1-7207-4eca-a222-38ca1d209d20" />
 
 
 ## Задача 3
@@ -42,6 +42,7 @@
 3) Записываем полученные символы в новый текстовый файл.
 
 ### Тестирование
+<img width="466" height="347" alt="Test3" src="https://github.com/user-attachments/assets/4b9add65-09a3-4827-9880-6400209d4554" />
 
 
 # Задание 2. Бинарные файлы
@@ -58,6 +59,7 @@
 3) Записываем отобранные числа в новый бинарный файл.
 
 ### Тестирование
+<img width="573" height="197" alt="Test4" src="https://github.com/user-attachments/assets/1da1fedb-b8a9-4d53-85c4-ac83a31a8cf9" />
 
 
 # Задание 3. Бинарные файлы и структуры
@@ -75,6 +77,7 @@
 3) Выводим игрушки для 3-х лет, исключая те, что называются «мяч».
 
 ### Тестирование
+<img width="348" height="298" alt="Test5" src="https://github.com/user-attachments/assets/8afba165-b26f-4660-978e-8f1ba75a68a2" />
 
 
 # Задание 4. List
@@ -91,6 +94,7 @@
 3) Выводим полученный перевёрнутый список.
 
 ### Тестирование
+<img width="433" height="240" alt="Test6" src="https://github.com/user-attachments/assets/e13bc822-8620-4ea4-8e93-3d0f1aa4356c" />
 
 
 # Задание 5. LinkedList
@@ -106,6 +110,7 @@
 3) Вставляем число F перед и после каждого найденного узла.
 
 ### Тестирование
+<img width="446" height="278" alt="Test7" src="https://github.com/user-attachments/assets/2663879d-5cf1-440b-a5cd-88ad9081275e" />
 
 
 # Задание 6. HashSet
@@ -125,6 +130,7 @@
 3) Выводим список всех уникальных дискотек и тех, что посетили все.
 
 ### Тестирование
+<img width="492" height="218" alt="Test8" src="https://github.com/user-attachments/assets/e70c553a-feca-4988-bffe-651e3fb41533" />
 
 
 ## Задача 2
@@ -134,9 +140,13 @@
 встречаются хотя бы однажды в словах с чётными номерами (нумерацию вести с 1).
 
 ### Алгоритм решения
-
+1) Разбиваем текст из файла на массив слов.
+2) Извлекаем уникальные буквы из каждого второго (чётного) слова в HashSet.
+3) <img width="622" height="440" alt="Test10" src="https://github.com/user-attachments/assets/21b3e0a9-952f-4367-b42d-1205c23412f6" />
+Сортируем буквы «пузырьком» по алфавиту и выводим результат.
 
 ### Тестирование
+<img width="351" height="305" alt="Test9" src="https://github.com/user-attachments/assets/dae0d9be-f62e-47f5-8a93-8f185278ea5f" />
 
 
 # Задание 5. Dictionary/SortedList
@@ -170,3 +180,5 @@
 3) Заносим их в SortedDictionary для автоматической сортировки по алфавиту и выводим.
 
 ### Тестирование
+<img width="622" height="440" alt="Test10" src="https://github.com/user-attachments/assets/8c681ce4-3b14-4038-8cdd-7d5e9631b292" />
+
