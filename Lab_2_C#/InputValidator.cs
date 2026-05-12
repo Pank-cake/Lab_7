@@ -1,199 +1,49 @@
-﻿using System;
+using System;
 
-namespace lab7
+namespace Lab7
 {
     public static class InputValidator
     {
-        public static int ReadInt(string prompt)
+        public static int ReadInteger(string prompt)
         {
+            int value;
             while (true)
             {
                 Console.Write(prompt);
-                string input = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(input))
+                if (int.TryParse(Console.ReadLine(), out value))
                 {
-                    Console.WriteLine("Ошибка: введите число.");
-                    continue;
+                    return value;
                 }
-
-                int result;
-                if (int.TryParse(input, out result))
-                    return result;
-
-                Console.WriteLine("Ошибка: введите целое число.");
+                Console.WriteLine("Ошибка! Пожалуйста, введите целое число.");
             }
         }
 
-        public static int ReadIntNonZero(string prompt)
+        public static double ReadDouble(string prompt)
         {
-            while (true)
-            {
-                int result = ReadInt(prompt);
-
-                if (result != 0)
-                    return result;
-
-                Console.WriteLine("Ошибка: число не должно быть нулём.");
-            }
-        }
-
-        public static int ReadIntPositive(string prompt)
-        {
-            while (true)
-            {
-                int result = ReadInt(prompt);
-
-                if (result > 0)
-                    return result;
-
-                Console.WriteLine("Ошибка: число должно быть положительным.");
-            }
-        }
-
-        public static int ReadIntNonNegative(string prompt)
-        {
-            while (true)
-            {
-                int result = ReadInt(prompt);
-
-                if (result >= 0)
-                    return result;
-
-                Console.WriteLine("Ошибка: число не должно быть отрицательным.");
-            }
-        }
-
-        public static int ReadIntInRange(string prompt, int min, int max)
-        {
-            while (true)
-            {
-                int result = ReadInt(prompt);
-
-                if (result >= min && result <= max)
-                    return result;
-
-                Console.WriteLine($"Ошибка: число должно быть от {min} до {max}.");
-            }
-        }
-
-        public static int ReadIntGreaterOrEqual(string prompt, int minValue)
-        {
-            while (true)
-            {
-                int result = ReadInt(prompt);
-
-                if (result >= minValue)
-                    return result;
-
-                Console.WriteLine($"Ошибка: число должно быть не меньше {minValue}.");
-            }
-        }
-
-        public static decimal ReadDecimal(string prompt)
-        {
+            double value;
             while (true)
             {
                 Console.Write(prompt);
-                string input = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(input))
+                if (double.TryParse(Console.ReadLine(), out value))
                 {
-                    Console.WriteLine("Ошибка: введите число.");
-                    continue;
+                    return value;
                 }
-
-                decimal result;
-                if (decimal.TryParse(input, out result))
-                    return result;
-
-                Console.WriteLine("Ошибка: введите десятичное число.");
-            }
-        }
-
-        public static decimal ReadDecimalPositive(string prompt)
-        {
-            while (true)
-            {
-                decimal result = ReadDecimal(prompt);
-
-                if (result > 0)
-                    return result;
-
-                Console.WriteLine("Ошибка: число должно быть положительным.");
-            }
-        }
-
-        public static string ReadNonEmptyString(string prompt)
-        {
-            while (true)
-            {
-                Console.Write(prompt);
-                string input = Console.ReadLine();
-
-                if (!string.IsNullOrWhiteSpace(input))
-                    return input;
-
-                Console.WriteLine("Ошибка: строка не должна быть пустой.");
+                Console.WriteLine("Ошибка! Введите число (разделитель — запятая).");
             }
         }
 
         public static string ReadString(string prompt)
         {
-            Console.Write(prompt);
-            return Console.ReadLine();
-        }
-
-        public static string ReadNonEmptyLine(string prompt)
-        {
-            while (true)
-            {
-                string result = ReadString(prompt);
-
-                if (!string.IsNullOrWhiteSpace(result))
-                    return result;
-
-                Console.WriteLine("Ошибка: введите хотя бы одну непустую строку.");
-            }
-        }
-
-        public static int ReadIntWithEmpty(string prompt, out bool isEmpty)
-        {
             while (true)
             {
                 Console.Write(prompt);
                 string input = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(input))
+                if (!string.IsNullOrEmpty(input))
                 {
-                    isEmpty = true;
-                    return 0;
+                    return input;
                 }
-
-                int result;
-                if (int.TryParse(input, out result))
-                {
-                    isEmpty = false;
-                    return result;
-                }
-
-                Console.WriteLine("Ошибка: введите целое число или пустую строку.");
+                Console.WriteLine("Ошибка! Строка не может быть пустой.");
             }
-        }
-
-        public static string ReadLineWithEmpty(string prompt, out bool isEmpty)
-        {
-            Console.Write(prompt);
-            string input = Console.ReadLine();
-
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                isEmpty = true;
-                return string.Empty;
-            }
-
-            isEmpty = false;
-            return input;
         }
     }
 }
