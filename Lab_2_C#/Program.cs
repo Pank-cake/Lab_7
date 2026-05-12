@@ -1,37 +1,25 @@
-﻿using lab7;
 using System;
 
-namespace lab7
+namespace Lab7
 {
     class Program
     {
         static void Main(string[] args)
         {
-            while (true)
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            bool isRunning = true;
+
+            while (isRunning)
             {
                 Console.Clear();
-                Console.WriteLine("Задания 1-5:");
-                Console.WriteLine("  1. Сумма max и min");
-                Console.WriteLine("  2. Сумма чётных");
-                Console.WriteLine("  3. Первые символы строк");
-                Console.WriteLine("  4. Исключить кратные k");
-                Console.WriteLine("  5. Игрушки для 3 лет (XML)");
-                Console.WriteLine();
-                Console.WriteLine("Задания 6-10:");
-                Console.WriteLine("  6. Перевернуть List");
-                Console.WriteLine("  7. Вставка в LinkedList");
-                Console.WriteLine("  8. Дискотеки (HashSet)");
-                Console.WriteLine("  9. Символы в чётных словах");
-                Console.WriteLine("  10. Абитуриенты");
-                Console.WriteLine();
-                Console.WriteLine("  0. Выход");
+                Console.WriteLine("1. Задание 1 | 2. Задание 2 | 3. Задание 3");
+                Console.WriteLine("4. Задание 4 | 5. Задание 5 | 6. Задание 6");
+                Console.WriteLine("7. Задание 7 | 8. Задание 8 | 9. Задание 9");
+                Console.WriteLine("10. Задание 10 | 0. Выход");
 
-                int choice = InputValidator.ReadIntInRange("\nВыбор: ", 0, 10);
-
-                if (choice == 0) break;
+                int choice = InputValidator.ReadInteger("\nВыберите номер задачи: ");
 
                 Console.Clear();
-
                 switch (choice)
                 {
                     case 1: FileTasks.SolveTask1(); break;
@@ -44,6 +32,14 @@ namespace lab7
                     case 8: CollectionTasks.SolveTask8(); break;
                     case 9: CollectionTasks.SolveTask9(); break;
                     case 10: CollectionTasks.SolveTask10(); break;
+                    case 0: isRunning = false; break;
+                    default: Console.WriteLine("Неверный выбор!"); break;
+                }
+
+                if (isRunning)
+                {
+                    Console.WriteLine("\nНажмите любую клавишу для возврата в меню...");
+                    Console.ReadKey();
                 }
             }
         }
